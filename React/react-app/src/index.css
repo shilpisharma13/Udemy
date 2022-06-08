@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Courier New', Courier, monospace;
+  background: #f1f5f8;
+  color: blueviolet;
+}
+
+.booklist {
+  color: red;
+  width: 90vw;
+  display: grid;
+  gap: 2rem;
+  max-width: 1170px;
+}
+
+@media screen and (min-width: 768px) {
+  .booklist {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.book {
+  background-color: bisque;
+  border-radius: 1rem;
+}
+
+.book h1 {
+  color: blue;
+  /* border-radius: 1rem;
+ padding: 1rem 1rem; */
+}
