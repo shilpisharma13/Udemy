@@ -39,3 +39,10 @@ body {
 .book .p {
   margin-top: 0.5rem;
 }
+
+.book button {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 300;
+  background-color: aqua;
+  margin: 0.2em;
+}
