@@ -1,0 +1,66 @@
+/* This is how your comment in CSS */
+
+/* h1 {
+  color: blue;
+  background-color: chocolate;
+  font-size: 80px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+} */
+body {
+  font-family: "Kdam Thmor Pro", sans-serif;
+  /* font-family: 'Roboto', sans-serif; */
+}
+h2 {
+  width: 400px;
+  height: 100px;
+  color: blueviolet;
+  background-color: blanchedalmond;
+  text-decoration: wavy underline;
+  letter-spacing: 10px;
+  /* border-width: 5px;
+  border-color: black;
+  border-left-style: dashed; */
+  border: 5px solid magenta;
+  border-left-style: dotted;
+  border-radius: 5% 20%;
+  display: inline; /* although h2 is a block level element but with display propery set to inline, it will change its behaviour*/
+}
+
+button {
+  color: brown;
+  background-color: antiquewhite;
+}
+
+p {
+  /* font-family: "Roboto", sans-serif; */
+  color: rebeccapurple;
+  background-color: #ffff00;
+  text-align: justify;
+  width: 75%;
+  font-weight: 700; /*this is bold*/
+  /* font-weight: normal or bold etc etc; */
+  text-decoration: none;
+  line-height: 2.5;
+  padding-left: 50px;
+  margin: 5px 10px;
+}
+
+h3 {
+  color: rgb(255, 34, 123);
+}
+
+.same-name {
+  color: yellowgreen;
+}
+
+ol li {
+  color: chartreuse;
+}
+
+*::selection {
+  color: coral;
+}
+
+body {
+  color: aquamarine;
+}

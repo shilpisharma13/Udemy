@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Forms demo</h1>
+    <form action="/tacos">
+      <p>
+        <label for="username">Enter a Username</label>
+        <input
+          id="username"
+          type="text"
+          placeholder="username"
+          name="username"
+        />
+      </p>
+      <p>
+        <label for="password">Enter your Password</label>
+        <input
+          id="password"
+          type="password"
+          placeholder="password"
+          name="password"
+        />
+      </p>
+      <p>
+        <label for="colour">Select color</label>
+        <input id="colour" type="color" name="color" />
+      </p>
+      <p>
+        <label for="select">Select</label>
+        <input id="select" type="radio" />
+      </p>
+      <p>
+        <label for="number">Enter a number</label>
+        <input
+          id="number"
+          placeholder="enter a number"
+          type="number"
+          name="number"
+        />
+      </p>
+      <button>Submit</button>
+    </form>
+    <hr />
+    <h3>Search Reddit</h3>
+    <form action="https://www.reddit.com/search/">
+      <label for="keyword">Enter a keyword to search on REDDIT</label>
+      <input type="text" id="keyword" placeholder="enter a keyword" name="q" />
+      <button>Search Reddit</button>
+    </form>
+    <hr />
+    <h3>Search Youtube</h3>
+    <form action="https://www.youtube.com/results?search">
+      <label for="keyword">Enter a keyword to search on YOUTUBE</label>
+      <input
+        type="text"
+        id="keyword"
+        placeholder="enter a keyword"
+        name="search_query"
+      />
+      <button>Search YOUTUBE</button>
+    </form>
+    <hr />
+    <h3>More Inputs</h3>
+    <form action="https://www.youtube.com/results?search">
+      <label for="keyword">Select your options</label>
+      <input type="checkbox" id="dogs" name="agree_to-dogs" checked />
+      <label for="options">Dogs</label>
+      <input type="checkbox" id="cats" name="agree_to-cats" />
+      <label for="options">Cats</label>
+      <button>Submit your choice</button>
+    </form>
+    <h3>Radio buttons</h3>
+    <form action="/new">
+      <label for="keyword">Where would you like to go?</label>
+      <input type="radio" name="travel" id="india" value="india" checked />
+      <label for="india">India</label>
+      <input type="radio" name="travel" id="us" value="us" />
+      <label for="us">US</label>
+      <input type="radio" name="travel" id="australia" value="australia" />
+      <label for="australia">Australia</label>
+      <button>Submit your choice</button>
+
+      <h3>Checkboxes</h3>
+      <label for="pizza">Select the pizza</label>
+      <select name="pizza" id="pizza">
+        <option value="veg">Mixed Veg Pizza</option>
+        <option value="paneer" selected>Paneer Pizza</option>
+        <option value="mushroom">Mushroom Pizza</option>
+      </select>
+      <button>Submit to order</button>
+    </form>
+  </body>
+</html>
