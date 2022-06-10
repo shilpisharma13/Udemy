@@ -1,10 +1,10 @@
 import React from 'react'
-import Final from './tutorial/1-useState/final/5-useState-counter'
+import Setup from './tutorial/3-conditional-rendering/setup/1-multiple-returns'
 
 function App() {
   return (
     <div className='container'>
-      <Final />
+      <Setup />
       {/* <h2>Advanced React Tutorial</h2> */}
     </div>
   )
