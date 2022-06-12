@@ -1,14 +1,20 @@
 import React, { useState } from 'react'
 
-const Categories = ({ Categories, filterItems }) => {
+const Categories = ({ categories, filterItems }) => {
   return (
     <div className='btn-container'>
-      <button className='filter-btn' onClick={() => filterItems('all')}>
-        all
-      </button>
-      <button className='filter-btn' onClick={() => filterItems('breakfast')}>
-        breakfast
-      </button>
+      {categories.map((category, index) => {
+        return (
+          <button
+            type='button'
+            key={index}
+            className='filter-btn'
+            onClick={() => filterItems(category)}
+          >
+            {category}
+          </button>
+        )
+      })}
     </div>
   )
 }
