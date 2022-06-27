@@ -1,0 +1,23 @@
+h3 {
+  border-bottom: 1px solid;
+}
+
+h2 {
+  padding: 2px;
+}
+
+image {
+  width: 1rem;
+}
+
+.score {
+  display: inline-flex;
+}
+
+p {
+  box-sizing: border-box;
+}
+
+button {
+  margin: 0%;
+}
