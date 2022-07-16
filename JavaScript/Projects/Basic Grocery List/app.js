@@ -2,23 +2,25 @@ const addItemBtn = document.querySelector('#add-item button')
 const hideList = document.querySelector('#hide')
 const groceryList = document.querySelector('#grocery-list')
 const inputItem = document.querySelector('#add-item input')
-const groceryItem = document.querySelectorAll('.item')
+const groceryItem = document.querySelectorAll('#grocery-list li')
 const searchItem = document.querySelector('#search-item input')
-
+const headings = document.querySelector('.heading')
+const panels = document.querySelectorAll('.panel')
+const answerBtn = document.querySelector('#showAnswer')
+const answer = document.querySelector('#answer')
+let selectedPanel = null
 //********Search Items********
 searchItem.addEventListener('keyup', (e) => {
-  console.log(e.target.value)
-  // e.preventDefault()
-  console.log(Array.from(groceryItem))
   const groceryArray = Array.from(groceryItem)
-  groceryArray.filter((item) => {
-    item.innerHTML === e.target.value
+  console.log(groceryArray)
+  groceryArray.forEach((item) => {
+    console.log(item.textContent)
+    if (item.textContent.toLowerCase().indexOf(e.target.value) == -1) {
+      item.style.display = 'none'
+    } else {
+      item.style.display = 'block'
+    }
   })
-
-  // for (const item of groceryItem) {
-  //   console.log(item.innerHTML.includes(string))
-  // }
-  // console.log(string)
 })
 
 //********Hide List********
@@ -49,4 +51,30 @@ addItemBtn.addEventListener('click', (e) => {
 groceryList.addEventListener('click', (e) => {
   console.log(e.target.className)
   if (e.target.className === 'delete') e.target.parentElement.remove()
+})
+
+//********Display tabs********
+headings.addEventListener('click', (e) => {
+  let dataAttribute = e.target.dataset.clicked
+  let attribute = document.querySelector(dataAttribute)
+
+  if (e.target.tagName == 'LI') {
+    if (selectedPanel !== null) {
+      selectedPanel.classList.remove('selected')
+    }
+    selectedPanel = e.target
+    selectedPanel.classList.add('selected')
+  }
+
+  panels.forEach((panel) => {
+    if (panel === attribute) panel.classList.add('active')
+    else panel.classList.remove('active')
+  })
+})
+
+//********Show answer********
+answerBtn.addEventListener('click', (e) => {
+  answer.classList.add('show')
+  answer.textContent = 'AN IMPASTA'
+  answerBtn.style.display = 'none'
 })
