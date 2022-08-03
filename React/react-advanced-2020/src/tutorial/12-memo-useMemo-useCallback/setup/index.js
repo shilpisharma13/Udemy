@@ -1,15 +1,34 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react'
-import { useFetch } from '../../9-custom-hooks/final/2-useFetch'
+import { useFetch } from '../../9-custom-hooks/setup/2-useFetch'
 
 // ATTENTION!!!!!!!!!!
 // I SWITCHED TO PERMANENT DOMAIN
 const url = 'https://course-api.com/javascript-store-products'
 
 // every time props or state changes, component re-renders
+const calculateMostExpensive = (data) => {
+  return (
+    data.reduce((highest, current) => {
+      const price = current.fields.price
+      if (price >= highest) highest = price
+      return highest
+    }, 0) / 100
+  )
+}
 
 const Index = () => {
   const { products } = useFetch(url)
   const [count, setCount] = useState(0)
+  const [cart, setCart] = useState(0)
+
+  const addToCart = useCallback(() => {
+    setCart(cart + 1)
+  }, [cart])
+
+  const mostExpensive = useMemo(
+    () => calculateMostExpensive(products),
+    [products]
+  )
 
   return (
     <>
@@ -17,22 +36,30 @@ const Index = () => {
       <button className='btn' onClick={() => setCount(count + 1)}>
         click me
       </button>
-      <BigList products={products} />
+      <h1 style={{ marginTop: '3rem' }}>cart : {cart}</h1>
+      <h1>Most Expensive : ${mostExpensive}</h1>
+      <BigList products={products} addToCart={addToCart} />
     </>
   )
 }
 
-const BigList = ({ products }) => {
+const BigList = React.memo(({ products, addToCart }) => {
   return (
     <section className='products'>
       {products.map((product) => {
-        return <SingleProduct key={product.id} {...product}></SingleProduct>
+        return (
+          <SingleProduct
+            key={product.id}
+            {...product}
+            addToCart={addToCart}
+          ></SingleProduct>
+        )
       })}
     </section>
   )
-}
+})
 
-const SingleProduct = ({ fields }) => {
+const SingleProduct = ({ fields, addToCart }) => {
   let { name, price } = fields
   price = price / 100
   const image = fields.image[0].url
@@ -42,6 +69,9 @@ const SingleProduct = ({ fields }) => {
       <img src={image} alt={name} />
       <h4>{name}</h4>
       <p>${price}</p>
+      <button className='btn' onClick={addToCart}>
+        Add to cart
+      </button>
     </article>
   )
 }
