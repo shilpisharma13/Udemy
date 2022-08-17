@@ -1,15 +1,24 @@
 const express = require('express')
-const path = require('path')
 const app = express()
+const logger = require('./logger')
+const authorise = require('./authorise')
 
-app.use(express.static('./public'))
+app.use([logger, authorise])
 
-// app.get('/', (request, response) => {
-//   response.sendFile(path.resolve(__dirname, './navbar-app/index.html'))
-// })
+app.get('/', (request, response) => {
+  response.send(`<h1> home page </h1>`)
+})
 
-app.all('*', (request, response) => {
-  response.status(404).send('resource not found')
+app.get('/about', (request, response) => {
+  response.send(`<h1> About page </h1>`)
+})
+
+app.get('/api/products', (request, response) => {
+  response.send(`<h1> products page </h1>`)
+})
+
+app.get('/api/items', (request, response) => {
+  response.send(`<h1> items page </h1>`)
 })
 
 app.listen(2000, () => {
