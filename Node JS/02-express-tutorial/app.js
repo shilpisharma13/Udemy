@@ -1,24 +1,21 @@
+const { response } = require('express')
 const express = require('express')
 const app = express()
-const logger = require('./logger')
-const authorise = require('./authorise')
+let { people } = require('./data')
 
-app.use([logger, authorise])
+app.use(express.static('./methods-public'))
+app.use(express.urlencoded({ extended: false }))
 
-app.get('/', (request, response) => {
-  response.send(`<h1> home page </h1>`)
+app.get('/api/people', (request, response) => {
+  response.status(404).json({ success: true, data: people })
 })
 
-app.get('/about', (request, response) => {
-  response.send(`<h1> About page </h1>`)
-})
-
-app.get('/api/products', (request, response) => {
-  response.send(`<h1> products page </h1>`)
-})
-
-app.get('/api/items', (request, response) => {
-  response.send(`<h1> items page </h1>`)
+app.post('/login', (request, response) => {
+  const { name } = request.body
+  if (name) {
+    return response.status(200).send(`Welcome, ${name}`)
+  }
+  response.status(404).send('Please provide credentials')
 })
 
 app.listen(2000, () => {
