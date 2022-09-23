@@ -3,7 +3,36 @@ import data from './data'
 import Article from './Article'
 
 function App() {
-  return <h2>dark mode starter</h2>
+  const [theme, setTheme] = useState('light-theme')
+
+  useEffect(() => {
+    document.documentElement.className = theme
+  }, [theme])
+
+  return (
+    <main>
+      <nav>
+        <div className='nav-center'>
+          <h1>overreacted</h1>
+          <button
+            className='btn'
+            onClick={() =>
+              theme === 'light-theme'
+                ? setTheme('dark-theme')
+                : setTheme('light-theme')
+            }
+          >
+            toggle
+          </button>
+        </div>
+      </nav>
+      <section className='articles'>
+        {data.map((item) => {
+          return <Article key={item.id} {...item} />
+        })}
+      </section>
+    </main>
+  )
 }
 
 export default App
