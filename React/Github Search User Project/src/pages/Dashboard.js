@@ -3,6 +3,16 @@ import { Info, Repos, User, Search, Navbar } from '../components'
 import loadingImage from '../images/preloader.gif'
 import { useGlobalContext } from '../context/context'
 const Dashboard = () => {
+  const { isLoading } = useGlobalContext()
+
+  if (isLoading) {
+    return (
+      <main>
+        <Search />
+        <img src={loadingImage} alt='loading' className='loading-img' />
+      </main>
+    )
+  }
   return (
     <main>
       <Navbar />
