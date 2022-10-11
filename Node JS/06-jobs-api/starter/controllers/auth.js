@@ -3,7 +3,10 @@ const { StatusCodes } = require('http-status-codes')
 
 const register = async (request, response) => {
   const user = await User.create({ ...request.body })
-  response.status(StatusCodes.CREATED).json({ user })
+  const token = user.createJWT()
+  response
+    .status(StatusCodes.CREATED)
+    .json({ user: { name: user.name }, token })
 }
 
 const login = async (request, response) => {
