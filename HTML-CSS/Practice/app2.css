@@ -1,0 +1,38 @@
+section {
+  background-color: aquamarine;
+  width: 600px;
+  height: 400px;
+  font-size: 50px;
+}
+
+div {
+  background-color: palevioletred;
+  width: 50%;
+  height: 50%;
+}
+
+h1 {
+  font-size: 50px;
+  border: 2px solid black;
+  line-height: 150%;
+}
+
+article {
+  font-size: 50px;
+}
+
+h2 {
+  font-size: 0.5em;
+}
+
+button {
+  font-size: 1em;
+  border-radius: 1em;
+  width: 5em;
+  height: 2em;
+  /* padding: 0.2em 0.5em; */
+  margin: 0.5em 0.5em;
+  border: 3px solid blueviolet;
+  background-color: wheat;
+  color: tomato;
+}

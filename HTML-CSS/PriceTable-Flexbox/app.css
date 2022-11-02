@@ -1,8 +1,3 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
 html,
 body,
 div,
@@ -120,120 +115,129 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: "";
+  content: '';
   content: none;
 }
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-
 html {
-  font-family: "Open Sans";
+  font-family: 'Open Sans';
   box-sizing: border-box;
 }
 body {
-  background-color: #60a9ff;
+  background-color: lightblue;
   display: flex;
   justify-content: center;
   align-items: center;
+  /* width: 80%; */
   min-height: 100vh;
 }
-
+img {
+  margin-bottom: 25px;
+  max-width: 100%;
+}
 .panel {
   background-color: white;
-  border-radius: 10px;
-  padding: 15px 25px;
-  /* width: 100%; */
-  /* max-width: 100%; */
-  margin: 10px;
   display: flex;
   flex-direction: column;
+  border: 10px solid white;
+  border-radius: 10px;
+  padding: 15px 25px;
+  /* width: 50%; */
+  max-width: 960px;
   text-align: center;
   text-transform: uppercase;
+  /* margin-bottom: 10px; */
 }
 
 .pricing-plan {
-  border-bottom: 1px solid #e1f1ff;
+  border-bottom: 2px solid #e1f1ff;
+  /* padding: 10px; */
 }
 
 .pricing-plan:last-child {
   border-bottom: none;
 }
 
-.pricing-img {
-  margin-bottom: 25px;
-  max-width: 100%;
-}
-
 .pricing-header {
-  color: #888;
+  padding-bottom: 10px;
+  /* border-bottom: 1px solid black; */
   font-weight: 600;
   letter-spacing: 1px;
+  color: gray;
 }
 
 .pricing-features {
+  margin: 10px 0 15px;
   color: #016ff9;
-  margin: 20px 0 25px;
+  padding: 10px;
 }
 
 .pricing-features-item {
-  /* color: #888; */
-  font-weight: 600;
+  padding: 20px;
+  /* margin-bottom: 20px; */
+  font-weight: 600px;
   letter-spacing: 1px;
-  font-size: 12px;
-  line-height: 1.5;
   border-top: 1px solid #e1f1ff;
-  padding: 10px 0;
+  line-height: 1.5;
+  font-size: 12px;
 }
+
 .pricing-features-item:last-child {
   border-bottom: 1px solid #e1f1ff;
 }
 
 .pricing-price {
-  color: #016ff9;
-  font-weight: 700;
   display: block;
-  font-size: 32px;
+  /* padding-bottom: 30px; */
+  font-size: 30px;
+  font-weight: 700;
+  color: blue;
 }
 
 .pricing-button {
-  border: 1px solid #9dd1ff;
-  margin: 25px 0;
-  border-radius: 10px;
-  display: inline-block;
-  padding: 15px 35px;
-  text-decoration: none;
   color: #348efe;
-  transition: background-color 200ms ease-in-out;
+  border-radius: 10px;
+  border: 1px solid #9dd1ff;
+  padding: 10px 30px;
+  text-decoration: none;
+  display: inline-block;
+  margin: 20px 0;
 }
 
-.pricing-button:hover,
-.pricing-button:focus {
+.pricing-button:hover {
   background-color: #e1f1ff;
+  transition: background-color 500ms;
 }
 
 .pricing-button.is-featured {
   background-color: #48aaff;
   color: white;
 }
-
 .pricing-button.is-featured:hover,
 .pricing-button.is-featured:focus {
   background-color: #269aff;
-  color: white;
 }
 
 @media (min-width: 900px) {
   .panel {
     flex-direction: row;
   }
+
   .pricing-plan {
     border-bottom: none;
     border-right: 1px solid #e1f1ff;
-    padding: 25px 50px;
+    padding: 25px 40px;
   }
   .pricing-plan:last-child {
     border-right: none;
   }
 }
+
+/* .pricing-plan {
+  width: 30%;
+  height: 400px;
+  border-right: 2px solid lightgray;
+} */
