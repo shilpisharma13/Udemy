@@ -1,0 +1,42 @@
+body {
+  background-color: rgb(221, 174, 2);
+  display: flex;
+  justify-content: center;
+}
+
+select {
+  appearance: none;
+  outline: 0;
+  border: 0;
+  box-shadow: none;
+  flex: 1;
+  /* position: relative; */
+  padding: 0px 1em;
+  background-color: #2c3e50;
+  background-image: none;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: medium;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.container {
+  position: relative;
+  display: flex;
+  width: 20em;
+  height: 3em;
+
+  border-radius: 0.25em;
+  overflow: hidden;
+}
+
+.container::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1em;
+  background-color: #34495e;
+  transition: 0.25s all ease;
+  pointer-events: none;
+}

@@ -1,0 +1,32 @@
+body {
+  background: #344557
+    url(https://unsplash.imgix.net/photo-1423683249427-8ca22bd873e0?fit=crop&fm=jpg&h=700&q=75&w=1050)
+    0 0 no-repeat;
+  background-size: cover;
+}
+
+.container {
+  position: relative;
+  /* width: 100%; */
+  /* border: 1px solid black; */
+  height: 100vh;
+}
+
+.child {
+  text-decoration: none;
+  text-transform: uppercase;
+  border: 3px solid white;
+  display: block;
+  color: white;
+  padding: 20px 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.child span {
+  /* margin: 50px 30px; */
+  font-weight: bolder;
+  font-size: x-large;
+}
