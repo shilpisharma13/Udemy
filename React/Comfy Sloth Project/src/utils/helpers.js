@@ -6,4 +6,11 @@ export const formatPrice = (number) => {
   return newNumber
 }
 
-export const getUniqueValues = () => {}
+export const getUniqueValues = (data, type) => {
+  let tempArray = data.flatMap((product) => product[type])
+  // if (type === 'colors') {
+  //   tempArray = tempArray.flat()
+  // }
+
+  return ['all', ...new Set(tempArray)]
+}
