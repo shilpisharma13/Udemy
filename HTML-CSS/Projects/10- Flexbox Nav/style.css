@@ -1,0 +1,30 @@
+h1 {
+  color: rgb(228, 165, 48);
+  text-decoration: double;
+  text-shadow: 1px 2px 5px brown;
+}
+
+.nav-list {
+  text-transform: capitalize;
+  list-style: none;
+  border: 2px solid pink;
+  box-sizing: border-box;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  gap: 1rem;
+  /* justify-content: center;
+  align-items: center; */
+}
+
+.nav-list > li {
+  /* padding: 0 2em; */
+  border: 1px solid black;
+}
+.nav-list li:first-child {
+  margin-right: auto;
+}
+
+.nav-list li:last-child {
+  margin-left: auto;
+}
