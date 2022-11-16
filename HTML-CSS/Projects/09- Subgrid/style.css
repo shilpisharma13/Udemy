@@ -1,0 +1,27 @@
+.form-control {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  grid-column-gap: 1em;
+  width: 50%;
+
+  margin: auto;
+}
+
+.field {
+  padding: 1em;
+  grid-column: span 2;
+  display: grid;
+  grid: inherit;
+  grid-gap: 1em;
+  grid-template-columns: 6em 1fr;
+  /* grid-template-columns: subgrid; */
+}
+label > span {
+  text-transform: capitalize;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+button {
+  margin: 1em;
+  padding: 0.2em 2em;
+}
