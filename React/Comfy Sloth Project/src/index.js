@@ -11,7 +11,7 @@ import { Auth0Provider, User } from '@auth0/auth0-react'
 ReactDOM.render(
   <Auth0Provider
     domain='dev-cmsfd82m.us.auth0.com'
-    clientId='YW9NlzLKzpfGlAzG04C0Wz9Vo2gDXe8W8'
+    clientId='W9NlzLKzpfGlAzG04C0Wz9Vo2gDXe8W8'
     redirectUri={window.location.origin}
     cacheLocation='localstorage'
   >
